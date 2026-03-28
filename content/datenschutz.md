@@ -8,8 +8,8 @@ Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gese
 
 ### Hosting
 
-Diese Website wird über GitHub Pages gehostet. Die Datenschutzerklärung von GitHub finden Sie unter [github.com/privacy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+Diese Website wird über GitHub Pages gehostet. Die Datenschutzerklärung von GitHub findest du unter [github.com/privacy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
 ### Kontakt
 
-Bei Fragen zum Datenschutz wenden Sie sich bitte an die im Impressum genannte Kontaktadresse.
+Bei Fragen zum Datenschutz wende dich bitte an die im Impressum genannte Kontaktadresse.

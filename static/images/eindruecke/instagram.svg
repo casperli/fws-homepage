@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#feda75"/>
+      <stop offset="25%" stop-color="#fa7e1e"/>
+      <stop offset="50%" stop-color="#d62976"/>
+      <stop offset="75%" stop-color="#962fbf"/>
+      <stop offset="100%" stop-color="#4f5bd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#ig)"/>
+  <!-- Instagram icon -->
+  <g transform="translate(400,200)" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-40" y="-40" width="80" height="80" rx="18"/>
+    <circle cx="0" cy="0" r="22"/>
+    <circle cx="26" cy="-26" r="4" fill="#fff" stroke="none"/>
+  </g>
+  <text x="400" y="280" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="22" font-weight="600" opacity="0.9">@feuerwehr_schwerzenbach</text>
+</svg>

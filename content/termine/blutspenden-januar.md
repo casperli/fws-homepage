@@ -10,4 +10,4 @@ Am **27. Januar 2026** organisiert die Feuerwehr Schwerzenbach zusammen mit dem 
 **Ort:** Schwerzenbach
 **Zeit:** 17:00 – 20:00 Uhr
 
-Jede Spende zählt — wir freuen uns auf Ihren Besuch!
+Jede Spende zählt — wir freuen uns auf deinen Besuch!

@@ -8,7 +8,7 @@ pagination:
   pagerSize: 10
 
 params:
-  description: Feuerwehr Schwerzenbach - Ihre Feuerwehr in Schwerzenbach
+  description: Feuerwehr Schwerzenbach - Deine Feuerwehr in Schwerzenbach
 
 menus:
   main:
