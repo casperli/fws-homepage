@@ -1,20 +1,22 @@
 ---
 title: Kontakt
+type: kontakt
 ---
 
 ## Feuerwehr Schwerzenbach
 
 **Adresse:**
-TODO
+Zielackerstrasse 9, 8603 Schwerzenbach
 
 **Telefon:**
-TODO
+044 826 70 20
 
 **E-Mail:**
-TODO
+<span id="email-link"></span>
 
-## Kommando
+### Kommando
 
-| Funktion | Name | Kontakt |
-|----------|------|---------|
-| TODO     | TODO | TODO    |
+| Funktion        | Name              | Kontakt                      |
+| --------------- | ----------------- | ---------------------------- |
+| Kommandant      | Andreas Killer    | kommando@fw-schwerzenbach.ch |
+| Kommandant Stv. | Christian Pelikan | kommando@fw-schwerzenbach.ch |
