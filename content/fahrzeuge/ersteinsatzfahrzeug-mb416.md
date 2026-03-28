@@ -1,11 +1,11 @@
 ---
 title: Ersteinsatzfahrzeug MB416
 weight: 30
-image: images/fahrzeuge/eef-mb416.jpg
-vehicle_type: Ersteinsatzfahrzeug
+image: images/fahrzeuge/eef.avif
+vehicle_type: Löschfahrzeug
 specs:
-  Baujahr: "TODO"
-  Besatzung: "TODO"
+  Baujahr: "2006"
+  Besatzung: "5"
 ---
 
 Beschreibung des Ersteinsatzfahrzeugs MB416 hier einfügen.

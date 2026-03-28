@@ -1,8 +1,10 @@
 ---
-title: Mechanische Leiter (historisch)
+title: Mechanische Leiter
 weight: 100
-image: images/fahrzeuge/mechanische-leiter.jpg
-vehicle_type: Historisches Fahrzeug
+image: images/fahrzeuge/mechleiter.avif
+vehicle_type: Anhänger
+specs:
+  Baujahr: "1989"
 ---
 
-Beschreibung der historischen mechanischen Leiter hier einfügen.
+Beschreibung der mechanischen Leiter hier einfügen.

@@ -1,11 +1,11 @@
 ---
-title: Truppentransporter
+title: Personentransporter
 weight: 20
-image: images/fahrzeuge/truppentransporter.jpg
+image: images/fahrzeuge/ptf.jpeg
 vehicle_type: Transportfahrzeug
 specs:
-  Baujahr: "TODO"
-  Besatzung: "TODO"
+  Baujahr: "2020"
+  Besatzung: "17"
 ---
 
 Beschreibung des Truppentransporters hier einfügen.

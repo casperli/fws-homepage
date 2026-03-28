@@ -1,8 +1,10 @@
 ---
-title: Motorspritze (historisch)
+title: Anhänger Motorspritze
 weight: 90
-image: images/fahrzeuge/motorspritze.jpg
-vehicle_type: Historisches Fahrzeug
+image: images/fahrzeuge/ms.jpeg
+vehicle_type: Anhänger
+specs:
+  Baujahr: "2022"
 ---
 
-Beschreibung der historischen Motorspritze hier einfügen.
+Beschreibung der Motorspritze hier einfügen.

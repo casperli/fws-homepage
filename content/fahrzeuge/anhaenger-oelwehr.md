@@ -1,10 +1,10 @@
 ---
-title: Anhänger Ölwehr
+title: Anhänger Öl-/Chemiewehr
 weight: 80
-image: images/fahrzeuge/anhaenger-oelwehr.jpg
+image: images/fahrzeuge/oc-anhaenger.avif
 vehicle_type: Anhänger
 specs:
-  Baujahr: "TODO"
+  Baujahr: "1989"
 ---
 
 Beschreibung des Anhängers Ölwehr hier einfügen.
