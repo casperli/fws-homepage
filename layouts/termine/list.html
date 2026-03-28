@@ -3,41 +3,43 @@
   <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
-  {{ if .Sections }}
-  {{/* Top-level: show sub-section cards */}}
-  <div class="section-cards">
-    {{ range .Sections.ByWeight }}
-    <a href="{{ .RelPermalink }}" class="section-card">
-      <h2>{{ .Title }}</h2>
-      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  {{ $cutoff := now.AddDate 0 0 -7 }}
+  {{ $upcoming := where .Pages.ByDate ".Date" "ge" $cutoff }}
+  {{ $past := where .Pages.ByDate.Reverse ".Date" "lt" $cutoff }}
+
+  {{ if $upcoming }}
+  <div class="event-grid">
+    {{ range $upcoming }}
+    <a href="{{ .RelPermalink }}" class="event-card">
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+      {{ end }}
+      <div class="event-card-body">
+        <span class="event-date">{{ .Date | time.Format ":date_long" }}</span>
+        <h2>{{ .Title }}</h2>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </div>
     </a>
     {{ end }}
   </div>
-  {{ else }}
-  {{/* Sub-section: render data from JSON if available */}}
-  {{ with .Params.data_file }}
-  {{ $data := index hugo.Data . }}
-  {{ if $data }}
-  <div class="program-list">
-    <div class="program-header">
-      <div class="program-date-col">Datum</div>
-      <div class="program-info-col">Thema / Inhalt</div>
-    </div>
-    {{ range $data }}
-    <div class="program-entry">
-      <div class="program-date-col">
-        <strong>{{ .datum }}</strong>
-        {{ with .zeit }}{{ . }}{{ end }}
+  {{ end }}
+
+  {{ if $past }}
+  <h2 class="section-subtitle">Vergangene Anlässe</h2>
+  <div class="event-grid">
+    {{ range $past }}
+    <a href="{{ .RelPermalink }}" class="event-card event-card--past">
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+      {{ end }}
+      <div class="event-card-body">
+        <span class="event-date">{{ .Date | time.Format ":date_long" }}</span>
+        <h2>{{ .Title }}</h2>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
       </div>
-      <div class="program-info-col">
-        <strong>{{ .thema }}</strong>
-        {{ with .inhalt }}{{ . }}{{ end }}
-      </div>
-    </div>
+    </a>
     {{ end }}
   </div>
-  {{ end }}
-  {{ end }}
   {{ end }}
 </div>
 {{ end }}

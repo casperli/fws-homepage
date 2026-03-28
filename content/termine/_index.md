@@ -1,5 +1,6 @@
 ---
-title: Aktuelle Termine
+title: Termine / Anlässe
+description: Öffentliche Veranstaltungen und Termine für die Bevölkerung
 ---
 
-Hier finden Sie alle aktuellen Termine der Feuerwehr Schwerzenbach — sowohl unser internes Übungsprogramm als auch öffentliche Anlässe, bei denen Sie uns besuchen oder kennenlernen können.
+Die Feuerwehr Schwerzenbach ist regelmässig an öffentlichen Anlässen präsent und bietet der Bevölkerung die Möglichkeit, unsere Arbeit hautnah kennenzulernen. Ob Informationsanlässe, öffentliche Übungen oder Aktionen wie Blutspendetage — schauen Sie vorbei!

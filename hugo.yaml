@@ -2,6 +2,7 @@ baseURL: https://www.fw-schwerzenbach.ch/
 languageCode: de-ch
 title: Feuerwehr Schwerzenbach
 defaultContentLanguage: de
+buildFuture: true
 
 pagination:
   pagerSize: 10
@@ -17,6 +18,9 @@ menus:
     - name: Termine
       pageRef: /termine
       weight: 20
+    - name: Jahresprogramm
+      pageRef: /jahresprogramm
+      weight: 25
     - name: Einsätze
       pageRef: /einsaetze
       weight: 30

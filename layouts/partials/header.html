@@ -7,7 +7,7 @@
     </button>
     <nav id="main-nav" class="main-nav">
       {{- range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} nav-link-active{{ end }}">
+        <a href="{{ .URL }}" class="nav-link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} nav-link-active{{ end }}">
           {{ .Name }}
         </a>
       {{- end }}
@@ -22,7 +22,7 @@
   </div>
   <nav id="mobile-nav" class="mobile-nav">
     {{- range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="mobile-nav-link{{ if $.IsMenuCurrent "main" . }} nav-link-active{{ end }}">{{ .Name }}</a>
+      <a href="{{ .URL }}" class="mobile-nav-link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} nav-link-active{{ end }}">{{ .Name }}</a>
     {{- end }}
   </nav>
 </header>

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="page-content">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{ with .Params.data_file }}
+  {{ $data := index hugo.Data . }}
+  {{ if $data }}
+  <div class="program-list">
+    <div class="program-header">
+      <div class="program-date-col">Datum</div>
+      <div class="program-info-col">Thema / Inhalt</div>
+    </div>
+    {{ range $data }}
+    <div class="program-entry">
+      <div class="program-date-col">
+        <strong>{{ .datum }}</strong>
+        {{ with .zeit }}{{ . }}{{ end }}
+      </div>
+      <div class="program-info-col">
+        <strong>{{ .thema }}</strong>
+        {{ with .inhalt }}{{ . }}{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}
