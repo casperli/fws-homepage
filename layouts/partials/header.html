@@ -1,0 +1,28 @@
+<header class="bg-primary text-white sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="{{ "/" | relURL }}" class="flex items-center gap-3 text-white no-underline">
+      {{ with resources.Get "images/logo.png" }}
+        <img src="{{ .RelPermalink }}" alt="FW Schwerzenbach Logo" class="h-10 w-auto">
+      {{ end }}
+      <span class="text-xl font-bold hidden sm:inline">Feuerwehr Schwerzenbach</span>
+      <span class="text-xl font-bold sm:hidden">FW Schwerzenbach</span>
+    </a>
+    <button id="menu-toggle" class="md:hidden p-2" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <nav id="main-nav" class="hidden md:flex gap-6">
+      {{- range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="text-white no-underline hover:text-accent transition-colors{{ if $.IsMenuCurrent "main" . }} font-bold{{ end }}">
+          {{ .Name }}
+        </a>
+      {{- end }}
+    </nav>
+  </div>
+  <nav id="mobile-nav" class="hidden md:hidden bg-primary-dark px-4 pb-4">
+    {{- range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="block py-2 text-white no-underline hover:text-accent">{{ .Name }}</a>
+    {{- end }}
+  </nav>
+</header>

@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="text-center py-12">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">Feuerwehr Schwerzenbach</h1>
+  <p class="text-xl text-gray-600 mb-8">Ihre Feuerwehr vor Ort</p>
+</div>
+
+{{ with .Content }}
+<div class="prose max-w-none mb-12">
+  {{ . }}
+</div>
+{{ end }}
+
+{{ $news := where .Site.RegularPages "Section" "aktuell" }}
+{{ with $news }}
+<section class="mb-12">
+  <h2 class="text-2xl font-bold mb-4">Aktuelles</h2>
+  {{ range first 3 . }}
+  <article class="mb-4 pb-4 border-b border-gray-200">
+    <h3 class="text-lg font-semibold">
+      <a href="{{ .RelPermalink }}" class="text-primary hover:underline">{{ .Title }}</a>
+    </h3>
+    {{ with .Date }}<time class="text-sm text-gray-500">{{ .Format "2. January 2006" }}</time>{{ end }}
+    {{ with .Summary }}<p class="mt-1 text-gray-700">{{ . }}</p>{{ end }}
+  </article>
+  {{ end }}
+  <a href="{{ "aktuell/" | relURL }}" class="text-primary hover:underline font-medium">Alle Neuigkeiten &rarr;</a>
+</section>
+{{ end }}
+{{ end }}

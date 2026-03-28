@@ -1,0 +1,15 @@
+<footer class="bg-gray-800 text-gray-300 mt-auto">
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <p class="font-bold text-white">Feuerwehr Schwerzenbach</p>
+        <p>Ihre Feuerwehr vor Ort</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="{{ "impressum/" | relURL }}" class="text-gray-300 hover:text-white no-underline">Impressum</a>
+        <a href="{{ "datenschutz/" | relURL }}" class="text-gray-300 hover:text-white no-underline">Datenschutz</a>
+      </div>
+    </div>
+    <p class="mt-6 text-sm text-gray-500">&copy; {{ now.Year }} Feuerwehr Schwerzenbach</p>
+  </div>
+</footer>

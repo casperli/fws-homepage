@@ -1,0 +1,34 @@
+{{ define "main" }}
+<article>
+  <h1 class="text-3xl font-bold mb-6">{{ .Title }}</h1>
+  <div class="prose max-w-none">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+
+{{ define "scripts" }}
+{{ with .Params.calendar_url }}
+<script>
+  (function() {
+    var calendarUrl = {{ . }};
+    var container = document.getElementById('external-calendar');
+    if (!container || !calendarUrl) return;
+
+    fetch(calendarUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(events) {
+        container.innerHTML = events.map(function(e) {
+          return '<div class="py-3 border-b border-gray-200">'
+            + '<span class="text-sm text-gray-500">' + e.date + '</span>'
+            + '<p class="font-medium">' + e.title + '</p>'
+            + '</div>';
+        }).join('');
+      })
+      .catch(function() {
+        container.innerHTML = '<p class="text-gray-500">Kalender konnte nicht geladen werden.</p>';
+      });
+  })();
+</script>
+{{ end }}
+{{ end }}

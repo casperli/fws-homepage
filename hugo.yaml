@@ -1,0 +1,43 @@
+baseURL: https://www.fw-schwerzenbach.ch/
+languageCode: de-ch
+title: Feuerwehr Schwerzenbach
+defaultContentLanguage: de
+
+pagination:
+  pagerSize: 10
+
+params:
+  description: Feuerwehr Schwerzenbach - Ihre Feuerwehr in Schwerzenbach
+  colors:
+    primary: "#0088CB"
+    accent: "#F4E909"
+    alert: "#ED1C24"
+
+menus:
+  main:
+    - name: Home
+      pageRef: /
+      weight: 10
+    - name: Aktuell
+      pageRef: /aktuell
+      weight: 20
+    - name: Fahrzeuge
+      pageRef: /fahrzeuge
+      weight: 30
+    - name: Einsaetze
+      pageRef: /einsaetze
+      weight: 40
+    - name: Jahresprogramm
+      pageRef: /jahresprogramm
+      weight: 50
+    - name: Insekten
+      pageRef: /insekten
+      weight: 60
+    - name: Kontakt
+      pageRef: /kontakt
+      weight: 70
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
