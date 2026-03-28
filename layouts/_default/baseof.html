@@ -8,14 +8,18 @@
   {{ with resources.Get "images/favicon.png" }}
   <link rel="icon" type="image/png" href="{{ .RelPermalink }}">
   {{ end }}
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  {{ with resources.Get "css/style.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
   {{- block "head" . }}{{- end }}
 </head>
 <body>
   {{- partial "header.html" . -}}
   {{- block "main" . }}{{- end }}
   {{- partial "footer.html" . -}}
-  <script src="{{ "js/main.js" | relURL }}"></script>
+  {{ with resources.Get "js/main.js" | fingerprint }}
+  <script src="{{ .RelPermalink }}"></script>
+  {{ end }}
   {{- block "scripts" . }}{{- end }}
 </body>
 </html>

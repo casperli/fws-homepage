@@ -1,8 +1,6 @@
 ---
-title: Feuerwehr Schwerzenbach
+title: Willkommen bei der Feuerwehr Schwerzenbach
 ---
-
-# Willkommen bei der Feuerwehr Schwerzenbach
 
 Ich freue mich, dass Sie den Weg auf unser Online-Portal gefunden haben. Auf den folgenden Seiten finden Sie viele wichtige und interessante Informationen rund um unsere Organisation.
 
