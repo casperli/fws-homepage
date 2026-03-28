@@ -102,6 +102,64 @@ Im Markdown kann das Bild dann so eingebunden werden:
 | Bild | `![Beschreibung](/images/bild.jpg)` | (Bild) |
 | Liste | `- Punkt 1` | Aufzählung |
 
+## Navigation anpassen
+
+Die Navigationsleiste (Menü) wird in der Datei `hugo.yaml` definiert. Um Menüpunkte hinzuzufügen, zu entfernen oder umzusortieren, muss diese Datei bearbeitet werden.
+
+### Aktueller Aufbau
+
+In `hugo.yaml` gibt es einen Abschnitt `menus.main`, der so aussieht:
+
+```yaml
+menus:
+  main:
+    - name: Startseite
+      pageRef: /
+      weight: 10
+    - name: Einsätze
+      pageRef: /einsaetze
+      weight: 30
+    - name: Kontakt
+      pageRef: /kontakt
+      weight: 70
+```
+
+- `name`: Der Text, der im Menü angezeigt wird
+- `pageRef`: Der Pfad zur Seite (entspricht dem Ordner oder der Datei unter `content/`)
+- `weight`: Bestimmt die Reihenfolge (kleinere Zahl = weiter links)
+
+### Neuen Menüpunkt hinzufügen
+
+1. Auf GitHub die Datei `hugo.yaml` öffnen und bearbeiten
+2. Unter `menus.main` einen neuen Eintrag hinzufügen, z.B.:
+
+```yaml
+    - name: Über uns
+      pageRef: /ueber-uns
+      weight: 45
+```
+
+3. Sicherstellen, dass die passende Inhaltsseite existiert (z.B. `content/ueber-uns.md`)
+4. Commit erstellen → Pull Request → Merge
+
+**Wichtig:** Die Einrückung muss exakt stimmen (4 Leerzeichen vor dem `-`, 6 Leerzeichen vor `name`, `pageRef` und `weight`).
+
+### Menüpunkt entfernen
+
+1. Auf GitHub die Datei `hugo.yaml` öffnen und bearbeiten
+2. Den gesamten Eintrag löschen (alle 3 Zeilen: `name`, `pageRef`, `weight`)
+3. Commit erstellen → Pull Request → Merge
+
+Die zugehörige Inhaltsseite unter `content/` bleibt bestehen — sie ist einfach nicht mehr im Menü sichtbar, aber weiterhin über die direkte URL erreichbar.
+
+### Menüpunkt umbenennen oder umsortieren
+
+1. Auf GitHub die Datei `hugo.yaml` öffnen und bearbeiten
+2. Den `name` ändern (für Umbenennung) oder den `weight`-Wert anpassen (für Umsortierung)
+3. Commit erstellen → Pull Request → Merge
+
+**Tipp:** Zwischen den Gewichtungen Platz lassen (z.B. 10, 20, 30 statt 1, 2, 3), damit später neue Einträge einfach dazwischen eingefügt werden können.
+
 ## Workflow: Von der Änderung zur Website
 
 1. **Bearbeiten**: Datei auf GitHub bearbeiten oder neu erstellen

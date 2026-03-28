@@ -23,18 +23,12 @@ menus:
     - name: Impressionen
       pageRef: /eindruecke
       weight: 40
-    - name: Info
-      pageRef: /insekten
-      weight: 50
     - name: Fahrzeuge
       pageRef: /fahrzeuge
       weight: 60
     - name: Kontakt
       pageRef: /kontakt
       weight: 70
-    - name: Archiv
-      pageRef: /archiv
-      weight: 80
 
 markup:
   goldmark:

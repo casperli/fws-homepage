@@ -70,16 +70,20 @@ a { color: inherit; }
 }
 
 .header-inner {
+  position: relative;
   max-width: 72rem;
   margin: 0 auto;
   padding: 0.5rem 1rem;
+  min-height: 4.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .logo-link {
+  position: absolute;
+  right: 1rem;
   text-decoration: none;
-  margin-left: auto;
 }
 
 .logo {
@@ -92,7 +96,6 @@ a { color: inherit; }
   display: none;
   align-items: center;
   gap: 1.75rem;
-  flex: 1;
   justify-content: center;
 }
 
