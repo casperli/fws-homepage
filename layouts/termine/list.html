@@ -12,7 +12,7 @@
     {{ range $upcoming }}
     <a href="{{ .RelPermalink }}" class="event-card">
       {{ with .Params.image }}
-      <img src="{{ (strings.TrimLeft "/" .) | absURL }}" alt="{{ $.Title }}">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
       {{ end }}
       <div class="event-card-body">
         <span class="event-date">{{ .Date | time.Format ":date_long" }}</span>
@@ -30,7 +30,7 @@
     {{ range $past }}
     <a href="{{ .RelPermalink }}" class="event-card event-card--past">
       {{ with .Params.image }}
-      <img src="{{ (strings.TrimLeft "/" .) | absURL }}" alt="{{ $.Title }}">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
       {{ end }}
       <div class="event-card-body">
         <span class="event-date">{{ .Date | time.Format ":date_long" }}</span>

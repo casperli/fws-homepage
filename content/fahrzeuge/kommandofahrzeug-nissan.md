@@ -1,7 +1,7 @@
 ---
 title: Kommandofahrzeug Nissan
 weight: 40
-image: /images/fahrzeuge/kdo-nissan.jpg
+image: images/fahrzeuge/kdo-nissan.jpg
 vehicle_type: Kommandofahrzeug
 specs:
   Baujahr: "TODO"

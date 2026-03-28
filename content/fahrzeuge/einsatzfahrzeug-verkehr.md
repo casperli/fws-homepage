@@ -1,7 +1,7 @@
 ---
 title: Einsatzfahrzeug Verkehr
 weight: 60
-image: /images/fahrzeuge/ef-verkehr.jpg
+image: images/fahrzeuge/ef-verkehr.jpg
 vehicle_type: Einsatzfahrzeug
 specs:
   Baujahr: "TODO"

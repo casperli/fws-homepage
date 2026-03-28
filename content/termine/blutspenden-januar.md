@@ -2,7 +2,7 @@
 title: Blutspenden Januar 2026
 date: 2026-01-27
 description: Blutspendenaktion in Schwerzenbach
-image: /images/termine/blutspenden-26-01.jpeg
+image: images/termine/blutspenden-26-01.jpeg
 ---
 
 Am **27. Januar 2026** organisiert die Feuerwehr Schwerzenbach zusammen mit dem Blutspendedienst eine Blutspendeaktion.

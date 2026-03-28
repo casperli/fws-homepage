@@ -6,7 +6,7 @@
     {{ range .Pages.ByWeight }}
     <a href="{{ .RelPermalink }}" class="vehicle-card">
       {{ with .Params.image }}
-      <img src="{{ (strings.TrimLeft "/" .) | absURL }}" alt="{{ $.Title }}">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
       {{ end }}
       <div class="vehicle-card-body">
         <h2>{{ .Title }}</h2>

@@ -1,7 +1,7 @@
 ---
 title: Sanitätsfahrzeug
 weight: 70
-image: /images/fahrzeuge/sani.jpg
+image: images/fahrzeuge/sani.jpg
 vehicle_type: Sanitätsfahrzeug
 specs:
   Baujahr: "TODO"

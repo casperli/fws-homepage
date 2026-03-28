@@ -1,7 +1,7 @@
 ---
 title: Motorspritze (historisch)
 weight: 90
-image: /images/fahrzeuge/motorspritze.jpg
+image: images/fahrzeuge/motorspritze.jpg
 vehicle_type: Historisches Fahrzeug
 ---
 

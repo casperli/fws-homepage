@@ -3,7 +3,7 @@
   {{ with .Parent }}<a href="{{ .RelPermalink }}" class="back-link">&larr; {{ .Title }}</a>{{ end }}
   <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Params.image }}
-  <img src="{{ (strings.TrimLeft "/" .) | absURL }}" alt="{{ $.Title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1.5rem;">
+  <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1.5rem;">
   {{ end }}
   {{ if .Params.specs }}
   <div class="specs-table">
