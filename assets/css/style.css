@@ -690,3 +690,78 @@ a { color: inherit; }
   font-size: 0.95rem;
   color: var(--color-gray-500);
 }
+
+/* ===== External exit page ===== */
+.external-exit {
+  max-width: 40rem;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+.external-exit-image img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  display: block;
+}
+
+.external-exit-placeholder {
+  width: 100%;
+  height: 16rem;
+  background: linear-gradient(135deg, var(--color-gray-800) 0%, #374151 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.3);
+}
+
+.external-exit-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+.external-exit-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.external-exit-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray-500);
+  margin: 0 0 1.25rem;
+}
+
+.external-exit-text {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.external-exit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-red);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background 0.15s;
+}
+
+.external-exit-button:hover {
+  background: #a00;
+  color: #fff;
+}
+
+.external-exit-hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+}
