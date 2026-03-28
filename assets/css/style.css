@@ -113,6 +113,25 @@ a { color: inherit; }
   color: var(--color-red);
 }
 
+.nav-link-highlight {
+  background: var(--color-red);
+  color: #fff !important;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-link-highlight:hover {
+  background: #a00;
+  color: #fff;
+}
+
+.mobile-nav-link.nav-link-highlight {
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
 .menu-toggle {
   background: none;
   border: none;
@@ -206,6 +225,44 @@ a { color: inherit; }
   margin-bottom: 1rem;
   line-height: 1.7;
   font-size: 1rem;
+}
+
+/* ===== CTA section (homepage) ===== */
+.cta-section {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  text-align: center;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.cta-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  font-size: 1.05rem;
+  color: var(--color-gray-500);
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--color-red);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background 0.15s;
+}
+
+.cta-button:hover {
+  background: #a00;
+  color: #fff;
 }
 
 /* ===== Main content (non-home pages) ===== */

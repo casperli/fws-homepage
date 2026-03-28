@@ -33,6 +33,11 @@ menus:
     - name: Kontakt
       pageRef: /kontakt
       weight: 70
+    - name: Mitmachen
+      pageRef: /mitmachen
+      weight: 80
+      params:
+        highlight: true
 
 markup:
   goldmark:
