@@ -3,35 +3,35 @@
 /* ===== Fonts ===== */
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Montserrat-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  src: url('/fonts/Montserrat-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-Regular.ttf') format('truetype');
+  src: url('/fonts/SourceSans3-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-SemiBold.ttf') format('truetype');
+  src: url('/fonts/SourceSans3-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
@@ -480,6 +480,16 @@ a { color: inherit; }
 
 @media (min-width: 768px) {
   .section-cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== Event hero image (detail) ===== */
+.event-hero-image {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 /* ===== Event cards (Termine) ===== */
