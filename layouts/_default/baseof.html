@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with resources.Get "images/favicon.png" }}
+  <link rel="icon" type="image/png" href="{{ .RelPermalink }}">
+  {{ end }}
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
   {{- block "head" . }}{{- end }}
 </head>
-<body class="min-h-screen flex flex-col bg-white text-gray-900">
+<body>
   {{- partial "header.html" . -}}
-  <main class="flex-1 w-full max-w-5xl mx-auto px-4 py-8">
-    {{- block "main" . }}{{- end }}
-  </main>
+  {{- block "main" . }}{{- end }}
   {{- partial "footer.html" . -}}
   <script src="{{ "js/main.js" | relURL }}"></script>
   {{- block "scripts" . }}{{- end }}

@@ -8,34 +8,33 @@ pagination:
 
 params:
   description: Feuerwehr Schwerzenbach - Ihre Feuerwehr in Schwerzenbach
-  colors:
-    primary: "#0088CB"
-    accent: "#F4E909"
-    alert: "#ED1C24"
 
 menus:
   main:
-    - name: Home
+    - name: Startseite
       pageRef: /
       weight: 10
-    - name: Aktuell
-      pageRef: /aktuell
+    - name: Aktuelle Termine
+      pageRef: /jahresprogramm
       weight: 20
+    - name: Einsätze
+      pageRef: /einsaetze
+      weight: 30
+    - name: Impressionen
+      pageRef: /eindruecke
+      weight: 40
+    - name: Info
+      pageRef: /insekten
+      weight: 50
     - name: Fahrzeuge
       pageRef: /fahrzeuge
-      weight: 30
-    - name: Einsaetze
-      pageRef: /einsaetze
-      weight: 40
-    - name: Jahresprogramm
-      pageRef: /jahresprogramm
-      weight: 50
-    - name: Insekten
-      pageRef: /insekten
       weight: 60
     - name: Kontakt
       pageRef: /kontakt
       weight: 70
+    - name: Archiv
+      pageRef: /archiv
+      weight: 80
 
 markup:
   goldmark:

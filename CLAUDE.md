@@ -1,0 +1,81 @@
+# FW Schwerzenbach Homepage
+
+## Purpose
+
+Public website for Feuerwehr Schwerzenbach (www.fw-schwerzenbach.ch). Static site generated with Hugo from Markdown files. Replaces the previous WIX website.
+
+## Technology
+
+- **Generator**: Hugo (Go binary, no npm/node dependencies)
+- **Styling**: Custom CSS without build toolchain (`static/css/style.css`)
+- **JavaScript**: Vanilla JS only for mobile menu toggle (`static/js/main.js`)
+- **Hosting**: GitHub Pages
+- **Deploy**: GitHub Actions (`.github/workflows/deploy.yml`) — push to `main` triggers build + deploy
+
+## Project Structure
+
+```
+hugo.yaml                    # Site config, navigation, metadata
+content/                     # Markdown content (editors work here)
+  _index.md                  # Homepage with welcome text
+  aktuell/                   # News
+  fahrzeuge/                 # Vehicle pages (frontmatter: image, vehicle_type, specs)
+  einsaetze/                 # Incident reports by year
+  jahresprogramm/            # Annual program (supports external calendar via calendar_url)
+  archiv/                    # Archive
+  insekten.md                # Info page (insect emergency service)
+  kontakt.md                 # Contact page
+  eindruecke.md              # Impressions / photo gallery
+  impressum.md               # Legal notice
+  datenschutz.md             # Privacy policy
+layouts/                     # Hugo templates (rarely modified)
+  _default/baseof.html       # Base layout (HTML skeleton, head, body)
+  _default/single.html       # Default single page
+  _default/list.html         # Default list view
+  index.html                 # Homepage (hero images + content)
+  fahrzeuge/list.html        # Vehicle overview (card grid)
+  fahrzeuge/single.html      # Vehicle detail page (image, specs table, text)
+  einsaetze/list.html        # Incidents overview
+  jahresprogramm/single.html # Annual program (optional external calendar)
+  partials/header.html       # Header with logo and navigation
+  partials/footer.html       # Footer with copyright and legal links
+assets/                      # Assets processed by Hugo Pipes (cache-busted)
+  images/logo.png            # Fire department logo
+  images/favicon.png         # Favicon
+  images/hero/               # 3 hero images for homepage
+static/                      # Static files (served as-is, no cache busting)
+  css/style.css              # All styling
+  js/main.js                 # Mobile menu toggle
+  images/                    # Content images
+    fahrzeuge/               # Vehicle photos
+    eindruecke/              # Impression photos
+```
+
+## Asset Strategy
+
+- **`assets/`**: For images loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for logo, favicon, hero images.
+- **`static/`**: For content images referenced in Markdown — served as-is without cache busting. Used for vehicle photos, impressions, etc.
+
+## Design
+
+- **Header**: White background, logo left, horizontal navigation beside it, active link in red
+- **Homepage**: 3 hero images side by side, welcome text below (heading uppercase)
+- **Footer**: Dark grey, copyright left, legal links right
+- **Color scheme**: Black/white with red (#c00) as accent color
+- **Mobile**: Hamburger menu, hero images stacked vertically
+
+## Navigation
+
+Navigation is defined in `hugo.yaml` under `menus.main`. Order controlled by `weight` (ascending).
+
+## External Calendar (Jahresprogramm)
+
+The annual program template supports loading external calendar data. Set `calendar_url` in frontmatter and place a `<div id="external-calendar"></div>` in the content. Data is loaded client-side via `fetch` and rendered as a list.
+
+## Local Development
+
+```bash
+hugo server
+```
+
+Starts a local server at `http://localhost:1313` with live reload.

@@ -1,13 +1,15 @@
 {{ define "main" }}
-<h1 class="text-3xl font-bold mb-6">{{ .Title }}</h1>
-{{ .Content }}
-{{ range .Pages.ByDate.Reverse }}
-<article class="mb-6 pb-6 border-b border-gray-200">
-  <h2 class="text-xl font-semibold">
-    <a href="{{ .RelPermalink }}" class="text-primary hover:underline">{{ .Title }}</a>
-  </h2>
-  {{ with .Date }}<time class="text-sm text-gray-500">{{ .Format "2. January 2006" }}</time>{{ end }}
-  {{ with .Summary }}<p class="mt-2 text-gray-700">{{ . }}</p>{{ end }}
-</article>
-{{ end }}
+<div class="page-content">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <div class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <article>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Date }}<time>{{ .Format "2. January 2006" }}</time>{{ end }}
+      {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </div>
+</div>
 {{ end }}
