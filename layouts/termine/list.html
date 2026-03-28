@@ -3,6 +3,18 @@
   <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
+  {{ if .Sections }}
+  {{/* Top-level: show sub-section cards */}}
+  <div class="section-cards">
+    {{ range .Sections.ByWeight }}
+    <a href="{{ .RelPermalink }}" class="section-card">
+      <h2>{{ .Title }}</h2>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  {{/* Sub-section: render data from JSON if available */}}
   {{ with .Params.data_file }}
   {{ $data := index hugo.Data . }}
   {{ if $data }}
@@ -24,6 +36,7 @@
     </div>
     {{ end }}
   </div>
+  {{ end }}
   {{ end }}
   {{ end }}
 </div>

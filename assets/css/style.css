@@ -387,6 +387,98 @@ a { color: inherit; }
   text-decoration: underline;
 }
 
+/* ===== Section cards ===== */
+.section-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.section-card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-gray-900);
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-color: var(--color-red);
+}
+
+.section-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.section-card p {
+  font-size: 0.95rem;
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .section-cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== Program list (Jahresprogramm) ===== */
+.program-header {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-gray-200);
+  color: var(--color-gray-500);
+  font-size: 1rem;
+}
+
+.program-entry {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.program-entry:last-child {
+  border-bottom: none;
+}
+
+.program-date-col {
+  flex: 0 0 10rem;
+  line-height: 1.6;
+}
+
+.program-date-col strong {
+  display: block;
+  color: var(--color-gray-900);
+}
+
+.program-entry .program-date-col {
+  color: var(--color-gray-500);
+  font-size: 0.95rem;
+}
+
+.program-info-col {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.program-info-col strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 640px) {
+  .program-header { display: none; }
+  .program-entry { flex-direction: column; gap: 0.25rem; }
+  .program-date-col { flex: none; }
+}
+
 /* ===== Utility ===== */
 .page-title {
   font-size: 1.875rem;
