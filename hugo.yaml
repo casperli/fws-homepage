@@ -15,8 +15,8 @@ menus:
     - name: Startseite
       pageRef: /
       weight: 10
-    - name: Termine
-      pageRef: /termine
+    - name: Aktuelles
+      pageRef: /aktuelles
       weight: 20
     - name: Jahresprogramm
       pageRef: /jahresprogramm
