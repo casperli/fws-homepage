@@ -11,7 +11,12 @@
       <div class="program-date-col">Datum</div>
       <div class="program-info-col">Thema / Inhalt</div>
     </div>
+    {{ $cutoff := now.AddDate 0 0 -7 }}
     {{ range $data }}
+      {{ $parts := split .datum "." }}
+      {{ $dateStr := printf "%s-%s-%s" (index $parts 2) (index $parts 1) (index $parts 0) }}
+      {{ $eventDate := time $dateStr }}
+      {{ if ge $eventDate.Unix $cutoff.Unix }}
     <div class="program-entry">
       <div class="program-date-col">
         <strong>{{ .datum }}</strong>
@@ -22,6 +27,7 @@
         {{ with .inhalt }}{{ . }}{{ end }}
       </div>
     </div>
+      {{ end }}
     {{ end }}
   </div>
   {{ end }}

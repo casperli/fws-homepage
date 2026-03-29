@@ -22,10 +22,10 @@ Du möchtest dich für die Gemeinschaft engagieren und suchst eine sinnvolle Fre
 
 ### So einfach geht's
 
-1. **Kontakt aufnehmen** — Schreib uns über das [Kontaktformular](/kontakt/?betreff=mitmachen) oder melde dich direkt beim Kommando
+1. **Kontakt aufnehmen** — Schreib uns über das [Kontaktformular](../kontakt/?betreff=mitmachen) oder melde dich direkt beim Kommando
 2. **Schnupperübung** — Besuche unverbindlich eine Übung und lerne uns kennen
 3. **Beitreten** — Nach der Schnupperübung kannst du dich definitiv anmelden
 
 ### Interesse?
 
-Wir freuen uns auf dich! Nimm unverbindlich [Kontakt](/kontakt/?betreff=mitmachen) mit uns auf.
+Wir freuen uns auf dich! Nimm unverbindlich [Kontakt](../kontakt/?betreff=mitmachen) mit uns auf.
