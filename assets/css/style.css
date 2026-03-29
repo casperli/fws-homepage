@@ -273,6 +273,11 @@ a { color: inherit; }
   flex: 1;
 }
 
+.page-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ===== Footer ===== */
 .footer {
   background: var(--color-gray-800);
