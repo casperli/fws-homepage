@@ -7,8 +7,8 @@ Public website for Feuerwehr Schwerzenbach (www.fw-schwerzenbach.ch). Static sit
 ## Technology
 
 - **Generator**: Hugo (Go binary, no npm/node dependencies)
-- **Styling**: Custom CSS without build toolchain (`static/css/style.css`)
-- **JavaScript**: Vanilla JS only for mobile menu toggle (`static/js/main.js`)
+- **Styling**: Custom CSS processed via Hugo Pipes (`assets/css/style.css`)
+- **JavaScript**: Vanilla JS only for mobile menu toggle (`assets/js/main.js`)
 - **Hosting**: GitHub Pages
 - **Deploy**: GitHub Actions (`.github/workflows/deploy.yml`) — push to `main` triggers build + deploy
 
@@ -40,12 +40,13 @@ layouts/                     # Hugo templates (rarely modified)
   partials/header.html       # Header with logo and navigation
   partials/footer.html       # Footer with copyright and legal links
 assets/                      # Assets processed by Hugo Pipes (cache-busted)
+  css/style.css              # All styling (fingerprinted)
+  js/main.js                 # Mobile menu toggle (fingerprinted)
   images/logo.png            # Fire department logo
   images/favicon.png         # Favicon
   images/hero/               # 3 hero images for homepage
 static/                      # Static files (served as-is, no cache busting)
-  css/style.css              # All styling
-  js/main.js                 # Mobile menu toggle
+  fonts/                     # Web fonts (woff2)
   images/                    # Content images
     fahrzeuge/               # Vehicle photos
     eindruecke/              # Impression photos
@@ -53,8 +54,8 @@ static/                      # Static files (served as-is, no cache busting)
 
 ## Asset Strategy
 
-- **`assets/`**: For images loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for logo, favicon, hero images.
-- **`static/`**: For content images referenced in Markdown — served as-is without cache busting. Used for vehicle photos, impressions, etc.
+- **`assets/`**: For files loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for CSS, JS, logo, favicon, hero images.
+- **`static/`**: For files served as-is without cache busting. Used for fonts, vehicle photos, impressions, etc. Font files are referenced from CSS via relative paths (`url('../fonts/...')`).
 
 ## Design
 
