@@ -12,7 +12,7 @@
     {{ end }}
   {{ end }}
   {{- if not .Params.hero_images }}
-  {{ range (slice "images/hero/hero1.avif" "images/hero/hero2.avif" "images/hero/hero3.avif") }}
+  {{ range (slice "images/hero/hero1.avif" "images/hero/hero2.avif" "images/hero/hero4.jpeg") }}
     {{ with resources.Get . }}
   <div class="hero-image">
     <img src="{{ .RelPermalink }}" alt="Feuerwehr Schwerzenbach">
