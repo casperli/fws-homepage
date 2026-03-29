@@ -44,18 +44,33 @@ assets/                      # Assets processed by Hugo Pipes (cache-busted)
   js/main.js                 # Mobile menu toggle (fingerprinted)
   images/logo.png            # Fire department logo
   images/favicon.png         # Favicon
-  images/hero/               # 3 hero images for homepage
+  images/hero/               # Hero images for homepage (randomly rotated)
+  images/fahrzeuge/          # Vehicle photos (auto-optimized)
+  images/termine/            # Event photos (auto-optimized)
+  images/einsatz.jpeg        # Operations page image
+layouts/partials/image.html  # Reusable image optimization partial
 static/                      # Static files (served as-is, no cache busting)
   fonts/                     # Web fonts (woff2)
-  images/                    # Content images
-    fahrzeuge/               # Vehicle photos
-    eindruecke/              # Impression photos
+  images/eindruecke/         # SVG/non-raster assets only
 ```
 
 ## Asset Strategy
 
-- **`assets/`**: For files loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for CSS, JS, logo, favicon, hero images.
-- **`static/`**: For files served as-is without cache busting. Used for fonts, vehicle photos, impressions, etc. Font files are referenced from CSS via relative paths (`url('../fonts/...')`).
+- **`assets/`**: For files loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for CSS, JS, logo, favicon, hero images, and all content images (vehicles, events).
+- **`static/`**: For files served as-is without cache busting. Used for fonts and SVGs only. Font files are referenced from CSS via relative paths (`url('../fonts/...')`).
+
+## Image Optimization
+
+All raster images (JPEG, PNG) live in `assets/images/` and are processed by Hugo's image pipeline via `layouts/partials/image.html`. This partial:
+
+- **Resizes** each image to multiple widths (configurable per template call)
+- **Converts** to WebP format (quality 80)
+- **Outputs** `<img>` tags with `srcset`, `sizes`, `width`/`height`, `loading="lazy"`, and `decoding="async"`
+- Processed images are cached in `resources/_gen/images/`
+
+**Important**: Hugo cannot process AVIF as input. Always use JPEG or PNG source files. Hugo will convert them to WebP for output.
+
+To add a new image: place it in the appropriate `assets/images/` subfolder (e.g. `assets/images/fahrzeuge/`) and reference it in content frontmatter as `images/fahrzeuge/filename.jpeg` (without leading `assets/`).
 
 ## Design
 

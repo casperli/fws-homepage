@@ -61,7 +61,7 @@ Kommt vorbei und erlebt die Feuerwehr hautnah!
 ---
 title: Tanklöschfahrzeug
 weight: 50
-image: /images/fahrzeuge/tlf.jpg
+image: images/fahrzeuge/tlf.jpeg
 vehicle_type: Löschfahrzeug
 specs:
   Baujahr: "2020"
@@ -78,18 +78,29 @@ Beschreibung des Fahrzeugs hier eingeben.
 
 ## Bilder hinzufügen
 
+Bilder werden automatisch optimiert (verkleinert und ins WebP-Format konvertiert). Dafür müssen sie im richtigen Ordner liegen.
+
 1. Auf GitHub in den passenden Ordner navigieren:
-   - Fahrzeuge: `static/images/fahrzeuge/`
-   - Eindrücke: `static/images/eindruecke/`
+   - Fahrzeuge: `assets/images/fahrzeuge/`
+   - Termine: `assets/images/termine/`
+   - Hero-Bilder: `assets/images/hero/`
 2. Auf **"Add file" → "Upload files"** klicken
-3. Bild hochladen
+3. Bild hochladen (**JPEG oder PNG** verwenden, kein AVIF)
 4. Commit erstellen (direkt oder via Pull Request)
 
-Im Markdown kann das Bild dann so eingebunden werden:
+Im Frontmatter wird das Bild ohne `assets/` referenziert:
 
 ```markdown
-![Beschreibung des Bildes](/images/fahrzeuge/mein-bild.jpg)
+image: images/fahrzeuge/mein-bild.jpeg
 ```
+
+Im Markdown-Text können Bilder so eingebunden werden:
+
+```markdown
+![Beschreibung des Bildes](/images/fahrzeuge/mein-bild.jpeg)
+```
+
+**Hinweis:** Die Bilder werden beim Erstellen der Website automatisch in verschiedene Grössen und ins WebP-Format konvertiert. Es reicht, ein Bild in guter Qualität hochzuladen — die Optimierung passiert automatisch.
 
 ## Textformatierung (Markdown)
 
@@ -172,6 +183,6 @@ Die zugehörige Inhaltsseite unter `content/` bleibt bestehen — sie ist einfac
 ## Tipps
 
 - **Dateinamen**: Kleinbuchstaben, Bindestriche statt Leerzeichen (z.B. `tag-der-offenen-tuer.md`)
-- **Bilder**: Vor dem Hochladen auf eine sinnvolle Grösse komprimieren (max. 1-2 MB)
+- **Bilder**: Werden automatisch optimiert. JPEG oder PNG hochladen (kein AVIF). Ordner: `assets/images/`
 - **Vorschau**: Im Pull Request kann die Änderung vor dem Veröffentlichen geprüft werden
 - **Rückgängig machen**: Über die Git-Historie können alle Änderungen jederzeit zurückgenommen werden
