@@ -1,7 +1,7 @@
 ---
 title: Sanitätsfahrzeug
 weight: 70
-image: images/fahrzeuge/san.avif
+image: images/fahrzeuge/san.jpeg
 vehicle_type: Spezialisten
 specs:
   Baujahr: "2000"

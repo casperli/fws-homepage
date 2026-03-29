@@ -1,7 +1,7 @@
 ---
 title: Mehrzweckfahrzeug Nissan
 weight: 40
-image: images/fahrzeuge/mzf.avif
+image: images/fahrzeuge/mzf.jpeg
 vehicle_type: Mehrzweckfahrzeug
 specs:
   Baujahr: "2014"

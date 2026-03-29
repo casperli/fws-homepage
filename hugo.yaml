@@ -39,6 +39,11 @@ menus:
       params:
         highlight: true
 
+imaging:
+  quality: 80
+  hint: photo
+  resampleFilter: Lanczos
+
 markup:
   goldmark:
     renderer:

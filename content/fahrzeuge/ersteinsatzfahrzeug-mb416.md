@@ -1,7 +1,7 @@
 ---
 title: Ersteinsatzfahrzeug MB416
 weight: 30
-image: images/fahrzeuge/eef.avif
+image: images/fahrzeuge/eef.jpeg
 vehicle_type: Löschfahrzeug
 specs:
   Baujahr: "2006"

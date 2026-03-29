@@ -1,7 +1,7 @@
 ---
 title: Anhänger Öl-/Chemiewehr
 weight: 80
-image: images/fahrzeuge/oc-anhaenger.avif
+image: images/fahrzeuge/oc-anhaenger.jpeg
 vehicle_type: Anhänger
 specs:
   Baujahr: "1989"

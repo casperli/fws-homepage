@@ -1,7 +1,7 @@
 ---
 title: Verkehrsfahrzeug
 weight: 60
-image: images/fahrzeuge/verkehr.avif
+image: images/fahrzeuge/verkehr.jpeg
 vehicle_type: Spezialisten
 specs:
   Baujahr: "2000"

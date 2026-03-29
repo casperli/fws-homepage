@@ -4,7 +4,7 @@
   <a href="{{ .RelPermalink }}" class="back-link">&larr; {{ .Title }}</a>
   {{ end }}
   {{ with .Params.image }}
-  <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="event-hero-image">
+  {{ partial "image.html" (dict "src" . "alt" $.Title "class" "event-hero-image" "sizes" "(max-width: 1200px) 100vw, 1200px" "widths" (slice 600 900 1200)) }}
   {{ end }}
   <h1 class="page-title">{{ .Title }}</h1>
   <div class="prose">

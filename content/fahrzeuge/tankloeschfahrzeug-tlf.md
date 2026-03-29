@@ -1,7 +1,7 @@
 ---
 title: Tanklöschfahrzeug (TLF)
 weight: 10
-image: images/fahrzeuge/tlf.avif
+image: images/fahrzeuge/tlf.jpeg
 vehicle_type: Löschfahrzeug
 specs:
   Baujahr: "2014"

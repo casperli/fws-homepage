@@ -10,7 +10,16 @@
   var images = [
     {{- $heroes := resources.Match "images/hero/*.{jpg,jpeg,png,avif,webp}" }}
     {{- range $i, $img := $heroes }}
-    {{ if $i }},{{ end }}"{{ $img.RelPermalink }}"
+      {{- $small := $img.Resize "600x webp" }}
+      {{- $medium := $img.Resize "900x webp" }}
+      {{- $large := $img.Resize "1200x webp" }}
+      {{- $default := $img.Resize "800x webp" }}
+    {{ if $i }},{{ end }}{
+      "src": "{{ $default.RelPermalink }}",
+      "srcset": "{{ $small.RelPermalink }} 600w, {{ $medium.RelPermalink }} 900w, {{ $large.RelPermalink }} 1200w",
+      "w": {{ $default.Width }},
+      "h": {{ $default.Height }}
+    }
     {{- end }}
   ];
   var container = document.getElementById('hero-images');
@@ -23,8 +32,13 @@
     var div = document.createElement('div');
     div.className = 'hero-image';
     var img = document.createElement('img');
-    img.src = images[k];
+    img.src = images[k].src;
+    img.srcset = images[k].srcset;
+    img.sizes = '(max-width: 768px) 100vw, 33vw';
+    img.width = images[k].w;
+    img.height = images[k].h;
     img.alt = 'Feuerwehr Schwerzenbach';
+    img.decoding = 'async';
     div.appendChild(img);
     container.appendChild(div);
   }

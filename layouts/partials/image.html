@@ -1,0 +1,49 @@
+{{/*
+  Optimized image partial — resizes and converts to WebP with srcset.
+
+  Params:
+    .src     — image path relative to assets/ (e.g. "images/fahrzeuge/tlf.avif")
+    .alt     — alt text
+    .class   — optional CSS class
+    .sizes   — optional sizes attribute (default "100vw")
+    .widths  — optional slice of widths (default [400, 800, 1200])
+    .loading — optional loading attribute (default "lazy")
+    .style   — optional inline style
+*/}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $style := .style | default "" }}
+{{ $sizes := .sizes | default "100vw" }}
+{{ $widths := .widths | default (slice 400 800 1200) }}
+{{ $loading := .loading | default "lazy" }}
+
+{{ $img := resources.Get $src }}
+{{ with $img }}
+  {{ $srcset := slice }}
+  {{ $fallbackWidth := 800 }}
+  {{ $origWidth := .Width }}
+  {{ range $widths }}
+    {{ if le . $origWidth }}
+      {{ $resized := $img.Resize (printf "%dx webp" .) }}
+      {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) }}
+    {{ else }}
+      {{ $resized := $img.Resize (printf "%dx webp" $origWidth) }}
+      {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $origWidth) }}
+    {{ end }}
+  {{ end }}
+  {{ $default := .Resize (printf "%dx webp" (math.Min .Width $fallbackWidth | int)) }}
+  <img
+    src="{{ $default.RelPermalink }}"
+    srcset="{{ delimit $srcset ", " }}"
+    sizes="{{ $sizes }}"
+    alt="{{ $alt }}"
+    width="{{ $default.Width }}"
+    height="{{ $default.Height }}"
+    {{ with $class }}class="{{ . }}"{{ end }}
+    {{ with $style }}style="{{ . }}"{{ end }}
+    loading="{{ $loading }}"
+    decoding="async"
+  >
+{{ end }}

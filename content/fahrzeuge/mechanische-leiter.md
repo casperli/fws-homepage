@@ -1,7 +1,7 @@
 ---
 title: Mechanische Leiter
 weight: 100
-image: images/fahrzeuge/mechleiter.avif
+image: images/fahrzeuge/mechleiter.jpeg
 vehicle_type: Anhänger
 specs:
   Baujahr: "1970"

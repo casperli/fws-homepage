@@ -6,7 +6,7 @@
     {{ range .Pages.ByWeight }}
     <a href="{{ .RelPermalink }}" class="vehicle-card">
       {{ with .Params.image }}
-      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+      {{ partial "image.html" (dict "src" . "alt" $.Title "sizes" "(max-width: 768px) 100vw, 33vw" "widths" (slice 400 600 800)) }}
       {{ end }}
       <div class="vehicle-card-body">
         <h2>{{ .Title }}</h2>

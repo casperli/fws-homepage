@@ -1,7 +1,7 @@
 ---
 title: Mehrzweckfahrzeug Toyota
 weight: 50
-image: images/fahrzeuge/toyota.avif
+image: images/fahrzeuge/toyota.jpeg
 vehicle_type: Mehrzweckfahrzeug
 specs:
   Baujahr: "1989"
