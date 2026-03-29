@@ -497,7 +497,13 @@ a { color: inherit; }
   display: block;
 }
 
-/* ===== Event cards (Termine) ===== */
+.hint-text {
+  color: #666;
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* ===== Event cards (Aktuelles) ===== */
 .event-grid {
   display: grid;
   grid-template-columns: 1fr;
