@@ -12,7 +12,7 @@
         </a>
       {{- end }}
     </nav>
-    <a href="{{ "/" | relURL }}" class="logo-link">
+    <a href="{{ site.Home.RelPermalink }}" class="logo-link">
       {{ with resources.Get "images/logo.png" }}
         <img src="{{ .RelPermalink }}" alt="Feuerwehr Schwerzenbach" class="logo">
       {{ else }}
