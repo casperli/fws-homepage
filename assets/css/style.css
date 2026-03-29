@@ -222,6 +222,34 @@ a { color: inherit; }
   padding: 3rem 1rem 4rem;
 }
 
+.greeting-avatar {
+  float: right;
+  margin: 0 0 1rem 2rem;
+  text-align: center;
+}
+
+.greeting-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.greeting-avatar-name {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-gray-600, #555);
+}
+
+@media (max-width: 480px) {
+  .greeting-avatar {
+    float: none;
+    margin: 0 auto 1.5rem;
+  }
+}
+
 .home-content p {
   margin-bottom: 1rem;
   line-height: 1.7;

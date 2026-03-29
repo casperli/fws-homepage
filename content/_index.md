@@ -1,5 +1,8 @@
 ---
 title: Willkommen bei der Feuerwehr Schwerzenbach
+greeting_image: images/kommandant.jpeg
+greeting_name: Andreas Killer
+greeting_role: Kommandant
 ---
 
 Ich freue mich, dass du den Weg auf unser Online-Portal gefunden hast. Auf den folgenden Seiten findest du viele wichtige und interessante Informationen rund um unsere Organisation.

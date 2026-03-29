@@ -46,6 +46,23 @@
 </script>
 
 <div class="home-content">
+  {{- with .Params.greeting_image }}
+    {{- $img := resources.Get . }}
+    {{- if $img }}
+      {{- $avatar := $img.Fill "300x300 webp Center" }}
+      {{- $avatar2x := $img.Fill "600x600 webp Center" }}
+      <div class="greeting-avatar">
+        <img src="{{ $avatar.RelPermalink }}"
+             srcset="{{ $avatar.RelPermalink }} 1x, {{ $avatar2x.RelPermalink }} 2x"
+             width="150" height="150"
+             alt="{{ with $.Params.greeting_name }}{{ . }}{{ end }}"
+             loading="lazy" decoding="async">
+        {{- with $.Params.greeting_name }}
+          <span class="greeting-avatar-name">{{ . }}{{ with $.Params.greeting_role }}, {{ . }}{{ end }}</span>
+        {{- end }}
+      </div>
+    {{- end }}
+  {{- end }}
   {{ .Content }}
 </div>
 
