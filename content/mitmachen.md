@@ -16,16 +16,16 @@ Du möchtest dich für die Gemeinschaft engagieren und suchst eine sinnvolle Fre
 ### Wer kann mitmachen?
 
 - Wohnhaft in Schwerzenbach
-- Zwischen 20 und 50 Jahre alt (Eintrittszeitpunkt)
+- Zwischen 18 und 50 Jahre alt (Eintrittszeitpunkt)
 - Motiviert und teamfähig
 - Keine feuerwehrtechnischen Vorkenntnisse erforderlich
 
 ### So einfach geht's
 
-1. **Kontakt aufnehmen** — Schreib uns über das [Kontaktformular](../kontakt/?betreff=mitmachen) oder melde dich direkt beim Kommando
+1. **Kontakt aufnehmen** — Schreib uns eine [E-Mail](#email-mitmachen) oder melde dich direkt beim Kommando
 2. **Schnupperübung** — Besuche unverbindlich eine Übung und lerne uns kennen
 3. **Beitreten** — Nach der Schnupperübung kannst du dich definitiv anmelden
 
 ### Interesse?
 
-Wir freuen uns auf dich! Nimm unverbindlich [Kontakt](../kontakt/?betreff=mitmachen) mit uns auf.
+Wir freuen uns auf dich! Nimm unverbindlich [Kontakt](#email-mitmachen) mit uns auf.

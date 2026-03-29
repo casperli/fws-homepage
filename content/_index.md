@@ -8,7 +8,7 @@ Die Feuerwehr Schwerzenbach zählt aktuell knapp 60 Feuerwehrmänner und –frau
 
 In unserem abwechslungsreichen Übungsprogramm lernen und vertiefen unsere AdF das Wissen, welches nötig ist, um Mensch und Tier (Katze auf dem Baum) möglichst schnell aus einer misslichen Situation zu retten oder vor Elementarereignissen (Hochwasser) zu schützen.
 
-Wir sind stets auf der Suche nach neuen Kameradinnen und Kameraden und würden uns freuen, auch dich bald in unserem Team zu begrüssen. Interessiert? Dann zögere nicht. Nimm mit mir Kontakt auf.
+Wir sind stets auf der Suche nach neuen Kameradinnen und Kameraden und würden uns freuen, auch dich bald in unserem Team zu begrüssen. Interessiert? Dann zögere nicht. [Nimm mit mir Kontakt auf](#email-mitmachen).
 
 In diesem Sinn wünsche ich dir noch viel Spass beim Surfen auf unserer Homepage.
 
