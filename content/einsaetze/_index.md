@@ -7,5 +7,3 @@ subtitle: Unsere Einsätze werden auf der kantonalen Plattform LODUR dokumentier
 hint: Du wirst auf lodur-zh.ch weitergeleitet.
 image: images/einsatz.jpeg
 ---
-
-Alle Einsätze der Feuerwehr Schwerzenbach sind öffentlich einsehbar. Die Einsatzübersicht wird vom Kanton Zürich über die Plattform LODUR bereitgestellt.
