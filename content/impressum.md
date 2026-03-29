@@ -2,7 +2,7 @@
 title: Impressum
 ---
 
-**Webmaster:** kommandant@fw-schwerzenbach.ch
+**Webmaster:** kommando@fw-schwerzenbach.ch
 
 ## Urheberschaft
 
