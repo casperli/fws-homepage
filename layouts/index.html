@@ -3,24 +3,33 @@
   <h1>{{ .Title }}</h1>
 </div>
 
-<div class="hero-images">
-  {{ range .Params.hero_images }}
-    {{ with resources.Get . }}
-  <div class="hero-image">
-    <img src="{{ .RelPermalink }}" alt="Feuerwehr Schwerzenbach">
-  </div>
-    {{ end }}
-  {{ end }}
-  {{- if not .Params.hero_images }}
-  {{ range (slice "images/hero/hero1.avif" "images/hero/hero2.avif" "images/hero/hero4.jpeg") }}
-    {{ with resources.Get . }}
-  <div class="hero-image">
-    <img src="{{ .RelPermalink }}" alt="Feuerwehr Schwerzenbach">
-  </div>
-    {{ end }}
-  {{ end }}
-  {{- end }}
-</div>
+<div class="hero-images" id="hero-images"></div>
+
+<script>
+(function() {
+  var images = [
+    {{- $heroes := resources.Match "images/hero/*.{jpg,jpeg,png,avif,webp}" }}
+    {{- range $i, $img := $heroes }}
+    {{ if $i }},{{ end }}"{{ $img.RelPermalink }}"
+    {{- end }}
+  ];
+  var container = document.getElementById('hero-images');
+  var count = Math.min(3, images.length);
+  for (var i = images.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = images[i]; images[i] = images[j]; images[j] = tmp;
+  }
+  for (var k = 0; k < count; k++) {
+    var div = document.createElement('div');
+    div.className = 'hero-image';
+    var img = document.createElement('img');
+    img.src = images[k];
+    img.alt = 'Feuerwehr Schwerzenbach';
+    div.appendChild(img);
+    container.appendChild(div);
+  }
+})();
+</script>
 
 <div class="home-content">
   {{ .Content }}
