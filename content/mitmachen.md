@@ -20,6 +20,8 @@ Du möchtest dich für die Gemeinschaft engagieren und suchst eine sinnvolle Fre
 - Motiviert und teamfähig
 - Keine feuerwehrtechnischen Vorkenntnisse erforderlich
 
+**Noch keine 18?** Die [Jugendfeuerwehr](https://jugendfeuerwehr.ch/) bietet Jugendlichen von 14 bis 18 Jahren die Möglichkeit, erste Feuerwehrluft zu schnuppern. Melde dich bei Interesse auch gerne direkt bei [uns](#email-mitmachen).
+
 ### So einfach geht's
 
 1. **Kontakt aufnehmen** — Schreib uns eine [E-Mail](#email-mitmachen) oder melde dich direkt beim Kommando
