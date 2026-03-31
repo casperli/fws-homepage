@@ -42,7 +42,7 @@
           <th>Funktion</th>
           <th>Name</th>
           <th>Telefon</th>
-          <th></th>
+          <th>Import</th>
         </tr>
       </thead>
       <tbody>
@@ -67,7 +67,7 @@
             {{- end -}}
           </td>
           <td class="welcome-contacts-vcf">
-            {{- if and $hasContact .name -}}
+            {{- if or .name .email .phone -}}
               {{- $clean := "" -}}
               {{- $tel := "" -}}
               {{- with .phone -}}
@@ -75,8 +75,8 @@
                 {{- $tel = cond (hasPrefix $clean "0") (printf "+41%s" (strings.TrimPrefix "0" $clean)) $clean -}}
               {{- end -}}
               {{- $email := .email -}}
-              {{- $contactName := .name -}}
-              {{- $vcard := printf "BEGIN:VCARD\nVERSION:3.0\nFN:%s\nORG:Feuerwehr Schwerzenbach\nTITLE:%s" .name .role -}}
+              {{- $contactName := .name | default .role -}}
+              {{- $vcard := printf "BEGIN:VCARD\nVERSION:3.0\nFN:%s\nORG:Feuerwehr Schwerzenbach\nTITLE:%s" $contactName .role -}}
               {{- with $tel -}}{{ $vcard = printf "%s\nTEL;TYPE=CELL:%s" $vcard . }}{{- end -}}
               {{- with $email -}}{{ $vcard = printf "%s\nEMAIL:%s" $vcard . }}{{- end -}}
               {{- $vcard = printf "%s\nEND:VCARD" $vcard -}}
@@ -124,7 +124,7 @@
     {{ with resources.Get "images/welcome-member/qr-fireskills.png" }}
     <div class="qr-float">
       <img src="{{ .RelPermalink }}" alt="Fireskills" loading="lazy" decoding="async">
-      <span>Fireskills</span>
+      <span><a href="https://neri.fireskills.ch/">Fireskills</a></span>
     </div>
     {{ end }}
     <p>Unsere zentrale Plattform für verschiedene Bereiche deines Feuerwehrdienstes:</p>
@@ -141,7 +141,7 @@
     {{ with resources.Get "images/welcome-member/qr-lodur.png" }}
     <div class="qr-float">
       <img src="{{ .RelPermalink }}" alt="Lodur" loading="lazy" decoding="async">
-      <span>Lodur</span>
+      <span><a href="https://www.lodur-zh.ch/schwerzenbach/">Lodur</a></span>
     </div>
     {{ end }}
     <p>Im Lodur siehst du alle bevorstehenden Übungen und kannst dich bei Bedarf abmelden.</p>
@@ -156,7 +156,7 @@
     {{ with resources.Get "images/welcome-member/qr-signal.png" }}
     <div class="qr-float">
       <img src="{{ .RelPermalink }}" alt="Signal Download" loading="lazy" decoding="async">
-      <span>Signal Download</span>
+      <span><a href="https://signal.org/">Signal Download</a></span>
     </div>
     {{ end }}
     <p><strong>E-Mail</strong> ist unser offizieller Kommunikationskanal. Wichtige Informationen und Aufgebote erhältst du per Mail.</p>
@@ -170,7 +170,7 @@
     {{ with resources.Get "images/welcome-member/qr-fireskills-training.png" }}
     <div class="qr-float">
       <img src="{{ .RelPermalink }}" alt="Übungsplan" loading="lazy" decoding="async">
-      <span>Übungsplan</span>
+      <span><a href="https://neri.fireskills.ch/TrainingScheduler">Übungsplan</a></span>
     </div>
     {{ end }}
     <p>An deiner ersten Übung wirst du von deinem Zugschef empfangen und dem Team vorgestellt. Komm in Arbeitskleidung (Tenue blau, nach der Einkleidung) und bringe gute Laune mit — den Rest zeigen wir dir vor Ort. Idealerweise kommst du 15 min vor Übungsbeginn ins Depot.</p>
