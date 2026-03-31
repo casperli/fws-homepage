@@ -55,5 +55,5 @@ contacts:
     email: "fam.thoeny@gmx.ch"
     phone: "079 357 45 89"
   - role: "Festnetz Depot"
-    phone: "012 345 67 89"
+    phone: "044 825 14 60"
 ---
