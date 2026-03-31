@@ -952,24 +952,50 @@ a { color: inherit; }
     display: none;
   }
 
+  .welcome-contacts tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .welcome-contacts tr {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--color-gray-200);
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
   }
 
   .welcome-contacts td {
     border: none;
-    padding: 0.1rem 0;
+    padding: 0;
   }
 
   .welcome-contacts td:first-child {
     font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .welcome-contacts td:nth-child(2),
+  .welcome-contacts td:nth-child(3) {
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+  }
+
+  .welcome-contacts td:nth-child(2) a,
+  .welcome-contacts td:nth-child(3) a {
+    color: var(--color-red);
   }
 
   .welcome-contacts-vcf {
-    display: inline-block;
-    width: auto;
-    padding-top: 0.25rem;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    left: auto;
+    transform: translateY(-50%);
+    width: auto !important;
+    padding: 0;
   }
 
   .qr-row {
