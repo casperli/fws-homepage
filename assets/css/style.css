@@ -775,3 +775,129 @@ a { color: inherit; }
   font-size: 0.85rem;
   color: var(--color-gray-500);
 }
+
+/* ===== Welcome member page ===== */
+.welcome-checklist {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: checklist;
+}
+
+.welcome-checklist li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+  counter-increment: checklist;
+}
+
+.welcome-checklist li::before {
+  content: counter(checklist);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid var(--color-gray-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-gray-500);
+}
+
+.welcome-contacts {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-contacts th,
+.welcome-contacts td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-gray-200);
+  text-align: left;
+}
+
+.welcome-contacts th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.welcome-contacts a {
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+.welcome-contacts a:hover {
+  text-decoration: underline;
+}
+
+.qr-row {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.qr-item {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.qr-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.qr-item span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+}
+
+.qr-float {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  text-align: center;
+}
+
+.qr-float img {
+  width: 120px;
+  height: 120px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.qr-float span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  font-style: italic;
+}
+
+.welcome-closing {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .qr-float {
+    float: none;
+    margin: 1rem 0;
+  }
+
+  .qr-row {
+    justify-content: center;
+  }
+
+  .qr-item img {
+    width: 120px;
+    height: 120px;
+  }
+}

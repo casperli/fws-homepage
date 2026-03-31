@@ -1,0 +1,175 @@
+{{ define "main" }}
+<div class="page-content">
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="prose">
+
+    <p>Schön, hast du den Weg zu uns gefunden! Wir freuen uns, dich bei uns begrüssen zu dürfen. Damit dir der Einstieg möglichst leichtfällt, haben wir die wichtigsten Informationen und Schritte für dich zusammengestellt.</p>
+    <p>Bei Fragen kannst du dich jederzeit an deinen Zugschef oder eine der unten aufgeführten Kontaktpersonen wenden — wir helfen dir gerne.</p>
+
+    <h2>Deine ersten Schritte</h2>
+    <p>Damit du möglichst schnell startklar bist, arbeite bitte folgende Punkte der Reihe nach ab:</p>
+
+    <ol class="welcome-checklist">
+      <li>
+        <strong>Einverständniserklärung unterschreiben</strong> — Die Anmeldung inkl. Datenschutzerklärung findest du in den Beilagen.
+      </li>
+      <li>
+        <strong>Zugschef kontaktieren</strong> — Er ist dein erster Ansprechpartner und teilt dir mit, ob du im Zug 1 oder 2 eingeteilt bist.
+      </li>
+      <li>
+        <strong>Einkleidung vereinbaren</strong> — Kontaktiere den Materialwart für einen Termin zur Ausgabe deiner persönlichen Schutzausrüstung.
+      </li>
+      <li>
+        <strong>Signal installieren</strong> — Unsere Chat-App für schnelle Kommunikation. Melde dich nach der Installation bei deinem Zugschef, damit er dich in die Gruppe(n) einladen kann.
+      </li>
+      <li>
+        <strong>Mission Guard Alerter installieren</strong> — Darüber erhältst du Alarme auf dein Smartphone. Die Zugangsdaten bekommst du von deinem Zugschef.
+      </li>
+      <li>
+        <strong>Fireskills einrichten</strong> — Unsere App für Ausbildung, Atemschutz-Leistungstest und mehr. Dein Zugschef gibt dir den Zugang und eine erste Einführung.
+      </li>
+      <li>
+        <strong>Lodur kennenlernen</strong> — Hier siehst du Übungstermine und meldest Abwesenheiten. Trage geplante Abwesenheiten (Urlaub, Militärdienst, Zivilschutz) frühzeitig ein.
+      </li>
+    </ol>
+
+    <h2>Deine Ansprechpartner</h2>
+    <p>Dein direkter Ansprechpartner ist der Zugschef deines Zuges. Bei allgemeinen Fragen kannst du dich auch an die anderen Kontaktpersonen wenden. Am besten speicherst du dir die Daten direkt in deinem Adressbuch.</p>
+
+    <table class="welcome-contacts">
+      <thead>
+        <tr>
+          <th>Funktion</th>
+          <th>Name</th>
+          <th>Telefon</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .Params.contacts }}
+        <tr>
+          <td>{{ .role }}</td>
+          <td>
+            {{- if .email -}}
+              <a href="mailto:{{ .email }}">{{ .name }}</a>
+            {{- else if .name -}}
+              {{ .name }}
+            {{- else -}}
+              —
+            {{- end -}}
+          </td>
+          <td>
+            {{- with .phone -}}
+              {{- $clean := replaceRE `\s` "" . -}}
+              {{- $tel := cond (hasPrefix $clean "0") (printf "+41%s" (strings.TrimPrefix "0" $clean)) $clean -}}
+              <a href="tel:{{ $tel }}">{{ . }}</a>
+            {{- end -}}
+          </td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+
+    <h2>Apps &amp; Zugänge</h2>
+
+    <h3>Mission Guard Alerter — Alarmierung</h3>
+    <p>Über diese App werden Alarme direkt auf dein Smartphone gesendet. Die Zugangsdaten erhältst du von deinem Zugschef.</p>
+    <p><strong>Wichtig:</strong> Die App ersetzt den Pager nicht, dieser ist das primäre Alarmierungsmittel, welches auch im Falle eines Strom- bzw. Handynetzausfalls weiter funktioniert. Bitte trage den Pager immer bei dir.</p>
+
+    <div class="qr-row">
+      {{ with resources.Get "images/welcome-member/qr-mission-guard-ios.png" }}
+      <div class="qr-item">
+        <img src="{{ .RelPermalink }}" alt="QR-Code Mission Guard iPhone" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+        <span><a href="https://apps.apple.com/ch/app/mission-guard-alerter/id6470322012">Mission Guard iPhone</a></span>
+      </div>
+      {{ end }}
+      {{ with resources.Get "images/welcome-member/qr-mission-guard-android.png" }}
+      <div class="qr-item">
+        <img src="{{ .RelPermalink }}" alt="QR-Code Mission Guard Android" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+        <span><a href="https://play.google.com/store/apps/details?id=ch.byteworks.missionguardalerter&hl=de-CH">Mission Guard Android</a></span>
+      </div>
+      {{ end }}
+      {{ with resources.Get "images/welcome-member/qr-mission-guard-anleitung.png" }}
+      <div class="qr-item">
+        <img src="{{ .RelPermalink }}" alt="QR-Code Einrichtungsanleitung" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+        <span><a href="https://support.feuerwehr-gvz.ch/category/mission-guard-apps/">Einrichtungsanleitung (GVZ)</a></span>
+      </div>
+      {{ end }}
+    </div>
+
+    <h3>Fireskills — Ausbildung &amp; Verwaltung</h3>
+    {{ with resources.Get "images/welcome-member/qr-fireskills.png" }}
+    <div class="qr-float">
+      <img src="{{ .RelPermalink }}" alt="Fireskills" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+      <span>Fireskills</span>
+    </div>
+    {{ end }}
+    <p>Unsere zentrale Plattform für verschiedene Bereiche deines Feuerwehrdienstes:</p>
+    <ul>
+      <li><strong>Atemschutz-Leistungstest (ASLT):</strong> Durchführung des jährlichen Tests</li>
+      <li><strong>Wissensaufbau:</strong> Quiz-Fragen rund ums Feuerwehrwissen</li>
+      <li><strong>Fahrplanung:</strong> Falls du als Fahrer eingeteilt bist, planst du hier deine Fahrstunden</li>
+      <li><strong>Schadensmeldungen:</strong> Defektes Material oder Ausrüstung melden</li>
+    </ul>
+    <p>→ <a href="https://neri.fireskills.ch/">https://neri.fireskills.ch/</a> Zugang erhältst du über deinen Zugschef.</p>
+    <div style="clear: both;"></div>
+
+    <h3>Lodur — Übungen &amp; Abwesenheiten</h3>
+    {{ with resources.Get "images/welcome-member/qr-lodur.png" }}
+    <div class="qr-float">
+      <img src="{{ .RelPermalink }}" alt="Lodur" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+      <span>Lodur</span>
+    </div>
+    {{ end }}
+    <p>Im Lodur siehst du alle bevorstehenden Übungen und kannst dich bei Bedarf abmelden.</p>
+    <ul>
+      <li><strong>Geplante Abwesenheiten</strong> (Urlaub, Militärdienst, Zivilschutz): Frühzeitig eintragen</li>
+      <li><strong>Ungeplante Abwesenheiten:</strong> So schnell wie möglich nachtragen oder deinen Zugschef informieren.</li>
+    </ul>
+    <p>→ <a href="https://www.lodur-zh.ch/schwerzenbach/">https://www.lodur-zh.ch/schwerzenbach/</a></p>
+    <div style="clear: both;"></div>
+
+    <h3>Kommunikation</h3>
+    {{ with resources.Get "images/welcome-member/qr-signal.png" }}
+    <div class="qr-float">
+      <img src="{{ .RelPermalink }}" alt="Signal Download" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+      <span>Signal Download</span>
+    </div>
+    {{ end }}
+    <p><strong>E-Mail</strong> ist unser offizieller Kommunikationskanal. Wichtige Informationen und Aufgebote erhältst du per Mail.</p>
+    <p><strong>Signal</strong> nutzen wir ergänzend für schnelle, informelle Nachrichten. Es gibt eine Chat-Gruppe der gesamten Feuerwehr sowie weitere Gruppen für Kader und Offiziere. Nach der Installation meldest du dich bei deinem Zugschef — er lädt dich in die passende(n) Gruppe(n) ein.</p>
+    <p>→ Signal herunterladen: <a href="https://signal.org/">https://signal.org/</a></p>
+    <div style="clear: both;"></div>
+
+    <h2>Gut zu wissen</h2>
+
+    <h3>Deine erste Übung</h3>
+    {{ with resources.Get "images/welcome-member/qr-fireskills-training.png" }}
+    <div class="qr-float">
+      <img src="{{ .RelPermalink }}" alt="Übungsplan" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+      <span>Übungsplan</span>
+    </div>
+    {{ end }}
+    <p>An deiner ersten Übung wirst du von deinem Zugschef empfangen und dem Team vorgestellt. Komm in Arbeitskleidung (Tenue blau, nach der Einkleidung) und bringe gute Laune mit — den Rest zeigen wir dir vor Ort. Idealerweise kommst du 15 min vor Übungsbeginn ins Depot.</p>
+    <p>Die Übungstermine findest du auf FireSkills:<br>
+    → <a href="https://neri.fireskills.ch/TrainingScheduler">https://neri.fireskills.ch/TrainingScheduler</a></p>
+    <div style="clear: both;"></div>
+
+    <h3>Ausbildung &amp; Kurse</h3>
+    <p>Zu Beginn besuchst du Grundkurse auf Bezirks- und Kantonsebene. Der Umfang beträgt 3×2 Tage, diese Zeit wird besoldet. Du wirst per E-Mail aufgeboten. Falls du an einem Termin verhindert bist, informiere sofort deinen Zugschef, damit ein Ersatztermin organisiert werden kann.</p>
+
+    <h3>Atemschutz</h3>
+    <p>Falls du im Löschzug eingeteilt bist und Atemschutz trägst, wird deine Tauglichkeit regelmässig ärztlich überprüft. Du wirst für den Untersuch durch die Administration aufgeboten.</p>
+
+    <h2>Beilagen</h2>
+    <p>Diesem Infoschreiben liegen bei:</p>
+    <ul>
+      <li><strong>Jahresprogramm</strong> — Übersicht aller Termine und Anlässe im laufenden Jahr</li>
+      <li><strong>Anmeldung Feuerwehr Schwerzenbach</strong> — inkl. Einverständniserklärung Datenschutz</li>
+      <li><strong>Mission Guard Flyer</strong> — Einrichtung der Alarmierungsapp</li>
+    </ul>
+
+    <p class="welcome-closing">Wir freuen uns auf die Zusammenarbeit mit dir und wünschen dir einen guten Start bei uns in der Feuerwehr Schwerzenbach!</p>
+
+  </div>
+</div>
+{{ end }}

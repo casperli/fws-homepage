@@ -6,6 +6,7 @@
   <meta name="view-transition" content="same-origin">
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
   {{ with resources.Get "images/favicon.png" }}
   <link rel="icon" type="image/png" href="{{ .RelPermalink }}">
   {{ end }}
