@@ -42,10 +42,12 @@
           <th>Funktion</th>
           <th>Name</th>
           <th>Telefon</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         {{ range .Params.contacts }}
+        {{ $hasContact := or .email .name }}
         <tr>
           <td>{{ .role }}</td>
           <td>
@@ -62,6 +64,28 @@
               {{- $clean := replaceRE `\s` "" . -}}
               {{- $tel := cond (hasPrefix $clean "0") (printf "+41%s" (strings.TrimPrefix "0" $clean)) $clean -}}
               <a href="tel:{{ $tel }}">{{ . }}</a>
+            {{- end -}}
+          </td>
+          <td class="welcome-contacts-vcf">
+            {{- if and $hasContact .name -}}
+              {{- $clean := "" -}}
+              {{- $tel := "" -}}
+              {{- with .phone -}}
+                {{- $clean = replaceRE `\s` "" . -}}
+                {{- $tel = cond (hasPrefix $clean "0") (printf "+41%s" (strings.TrimPrefix "0" $clean)) $clean -}}
+              {{- end -}}
+              {{- $email := .email -}}
+              {{- $contactName := .name -}}
+              {{- $vcard := printf "BEGIN:VCARD\nVERSION:3.0\nFN:%s\nORG:Feuerwehr Schwerzenbach\nTITLE:%s" .name .role -}}
+              {{- with $tel -}}{{ $vcard = printf "%s\nTEL;TYPE=CELL:%s" $vcard . }}{{- end -}}
+              {{- with $email -}}{{ $vcard = printf "%s\nEMAIL:%s" $vcard . }}{{- end -}}
+              {{- $vcard = printf "%s\nEND:VCARD" $vcard -}}
+              {{- $vcardEncoded := replaceRE `\+` "%20" (urlquery $vcard) -}}
+              {{ with resources.Get "images/welcome-member/address-book.svg" }}
+              <a href="data:text/vcard;charset=utf-8,{{ $vcardEncoded | safeURL }}" download="{{ $contactName }}.vcf" class="vcf-link" title="Kontakt speichern">
+                <img src="{{ .RelPermalink }}" alt="Kontakt speichern" class="vcf-icon">
+              </a>
+              {{ end }}
             {{- end -}}
           </td>
         </tr>
