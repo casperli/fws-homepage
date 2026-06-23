@@ -1,6 +1,6 @@
 ---
-title: Einführung Ameise 23.06.2026
-date: 2026-06-23
+title: Einführung Ameise 26.06.2026
+date: 2026-06-26
 description: Einführung Ameise
 image: images/aktuelles/einfuehrung_ameise.jpeg
 ---
