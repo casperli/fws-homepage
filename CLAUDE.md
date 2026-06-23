@@ -10,20 +10,20 @@ Public website for Feuerwehr Schwerzenbach (www.fw-schwerzenbach.ch). Static sit
 - **Styling**: Custom CSS processed via Hugo Pipes (`assets/css/style.css`)
 - **JavaScript**: Vanilla JS only for mobile menu toggle (`assets/js/main.js`)
 - **Hosting**: GitHub Pages
-- **Deploy**: GitHub Actions (`.github/workflows/deploy.yml`) — push to `main` triggers build + deploy
+- **Deploy**: GitHub Actions (`.github/workflows/deploy.yml`) — push to `master` triggers build + deploy
 
 ## Project Structure
 
 ```
 hugo.yaml                    # Site config, navigation, metadata
 content/                     # Markdown content (editors work here)
-  _index.md                  # Homepage with welcome text
-  aktuell/                   # News
+  _index.md                  # Homepage (welcome text + greeting from Kommandant)
+  aktuelles/                 # News
   fahrzeuge/                 # Vehicle pages (frontmatter: image, vehicle_type, specs)
   einsaetze/                 # Incident reports by year
   jahresprogramm/            # Annual program (supports external calendar via calendar_url)
-  archiv/                    # Archive
-  insekten.md                # Info page (insect emergency service)
+  mitmachen.md               # Join / recruitment page
+  willkommen.md              # Member onboarding page (noindex, obscure URL)
   kontakt.md                 # Contact page
   eindruecke.md              # Impressions / photo gallery
   impressum.md               # Legal notice
@@ -32,11 +32,17 @@ layouts/                     # Hugo templates (rarely modified)
   _default/baseof.html       # Base layout (HTML skeleton, head, body)
   _default/single.html       # Default single page
   _default/list.html         # Default list view
+  _default/external-link.html # Render helper for external links
   index.html                 # Homepage (hero images + content)
   fahrzeuge/list.html        # Vehicle overview (card grid)
   fahrzeuge/single.html      # Vehicle detail page (image, specs table, text)
+  aktuelles/list.html        # News overview
+  aktuelles/single.html      # News detail page
   einsaetze/list.html        # Incidents overview
+  jahresprogramm/list.html   # Annual program overview
   jahresprogramm/single.html # Annual program (optional external calendar)
+  kontakt/single.html        # Contact page
+  willkommen/single.html     # Member onboarding page (vcards, addresses)
   partials/header.html       # Header with logo and navigation
   partials/footer.html       # Footer with copyright and legal links
 assets/                      # Assets processed by Hugo Pipes (cache-busted)
@@ -46,7 +52,9 @@ assets/                      # Assets processed by Hugo Pipes (cache-busted)
   images/favicon.png         # Favicon
   images/hero/               # Hero images for homepage (randomly rotated)
   images/fahrzeuge/          # Vehicle photos (auto-optimized)
-  images/termine/            # Event photos (auto-optimized)
+  images/aktuelles/          # News photos (auto-optimized)
+  images/welcome-member/     # Member onboarding page images
+  images/kommandant.jpeg     # Homepage greeting portrait
   images/einsatz.jpeg        # Operations page image
 layouts/partials/image.html  # Reusable image optimization partial
 static/                      # Static files (served as-is, no cache busting)
@@ -56,7 +64,7 @@ static/                      # Static files (served as-is, no cache busting)
 
 ## Asset Strategy
 
-- **`assets/`**: For files loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for CSS, JS, logo, favicon, hero images, and all content images (vehicles, events).
+- **`assets/`**: For files loaded via `resources.Get` in templates — produces content-hashed URLs for automatic cache busting. Used for CSS, JS, logo, favicon, hero images, and all content images (vehicles, news).
 - **`static/`**: For files served as-is without cache busting. Used for fonts and SVGs only. Font files are referenced from CSS via relative paths (`url('../fonts/...')`).
 
 ## Image Optimization

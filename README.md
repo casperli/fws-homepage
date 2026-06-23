@@ -34,7 +34,7 @@ Hier kommt der Text der Seite.
 
 ### Neue Neuigkeit erstellen
 
-1. Auf GitHub in den Ordner `content/aktuell/` navigieren
+1. Auf GitHub in den Ordner `content/aktuelles/` navigieren
 2. Auf **"Add file" → "Create new file"** klicken
 3. Dateiname eingeben, z.B. `tag-der-offenen-tuer.md`
 4. Folgenden Inhalt einfügen:
@@ -82,7 +82,7 @@ Bilder werden automatisch optimiert (verkleinert und ins WebP-Format konvertiert
 
 1. Auf GitHub in den passenden Ordner navigieren:
    - Fahrzeuge: `assets/images/fahrzeuge/`
-   - Termine: `assets/images/termine/`
+   - Aktuelles (Neuigkeiten): `assets/images/aktuelles/`
    - Hero-Bilder: `assets/images/hero/`
 2. Auf **"Add file" → "Upload files"** klicken
 3. Bild hochladen (**JPEG oder PNG** verwenden, kein AVIF)
@@ -127,12 +127,27 @@ menus:
     - name: Startseite
       pageRef: /
       weight: 10
+    - name: Aktuelles
+      pageRef: /aktuelles
+      weight: 20
+    - name: Jahresprogramm
+      pageRef: /jahresprogramm
+      weight: 25
     - name: Einsätze
       pageRef: /einsaetze
       weight: 30
+    - name: Impressionen
+      pageRef: /eindruecke
+      weight: 40
+    - name: Fahrzeuge
+      pageRef: /fahrzeuge
+      weight: 60
     - name: Kontakt
       pageRef: /kontakt
       weight: 70
+    - name: Mitmachen
+      pageRef: /mitmachen
+      weight: 80
 ```
 
 - `name`: Der Text, der im Menü angezeigt wird
