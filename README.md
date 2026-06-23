@@ -195,6 +195,57 @@ Die zugehörige Inhaltsseite unter `content/` bleibt bestehen — sie ist einfac
 5. **Merge**: Nach der Freigabe wird der Pull Request gemergt
 6. **Automatisch online**: Die Website wird automatisch aktualisiert (dauert ca. 1-2 Minuten)
 
+## Lokale Entwicklung (optional)
+
+Für die meisten Änderungen reicht die Bearbeitung direkt auf GitHub (siehe oben). Wer grössere Anpassungen macht oder die Website vor dem Veröffentlichen lokal testen möchte, kann sie auf dem eigenen Computer laufen lassen. Dazu wird **Hugo (Extended)** und **Git** benötigt.
+
+### Hugo installieren
+
+**macOS** (mit [Homebrew](https://brew.sh)):
+
+```bash
+brew install hugo git
+```
+
+**Windows** (mit [winget](https://learn.microsoft.com/windows/package-manager/), in PowerShell):
+
+```powershell
+winget install Hugo.Hugo.Extended
+winget install Git.Git
+```
+
+Alternativ unter Windows mit [Chocolatey](https://chocolatey.org): `choco install hugo-extended git`
+
+> **Wichtig:** Es muss die **Extended**-Variante von Hugo sein (nicht die normale), da die Website Bilder zu WebP konvertiert. Mit `hugo version` prüfen — die Ausgabe muss `+extended` enthalten.
+
+### Projekt herunterladen
+
+Einmalig das Repository klonen (Pfad/URL ggf. anpassen):
+
+```bash
+git clone https://github.com/casperli/fws-homepage.git
+cd fws-homepage
+```
+
+Die Befehle sind auf macOS (Terminal) und Windows (PowerShell oder Eingabeaufforderung) identisch.
+
+### Website lokal starten
+
+Im Projektordner:
+
+```bash
+hugo server
+```
+
+Danach im Browser http://localhost:1313 öffnen. Die Seite aktualisiert sich automatisch (Live-Reload), sobald eine Datei gespeichert wird. Zum Beenden im Terminal `Strg + C` drücken.
+
+Nützliche Varianten:
+
+- `hugo server -D` — zeigt auch Entwürfe an (Seiten mit `draft: true`)
+- `hugo --minify` — erzeugt einmalig die fertige Website im Ordner `public/` (ohne Server, wie beim automatischen Deploy)
+
+> **Hinweis:** Die Mitglieder-Onboarding-Seite (`content/willkommen.md`) erscheint bewusst in keinem Menü und in keiner Übersicht. Sie ist lokal nur über ihre direkte URL erreichbar: http://localhost:1313/x7k2m9f4w8p3r6n1v5b8j3q2/
+
 ## Tipps
 
 - **Dateinamen**: Kleinbuchstaben, Bindestriche statt Leerzeichen (z.B. `tag-der-offenen-tuer.md`)

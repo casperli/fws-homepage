@@ -3,7 +3,7 @@ title: "Willkommen bei der Feuerwehr Schwerzenbach"
 type: willkommen
 url: /x7k2m9f4w8p3r6n1v5b8j3q2/
 noindex: true
-_build:
+build:
   list: never
 contacts:
   - role: "Kommandant"
